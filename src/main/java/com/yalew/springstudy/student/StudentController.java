@@ -1,8 +1,6 @@
 package com.yalew.springstudy.student;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,7 +14,29 @@ public class StudentController {
         this.service = service;
     }
 
-    @GetMapping("")
+    @PostMapping() //POST
+    public Student save(
+            @RequestBody Student student
+    ) {
+        return service.save(student);
+    }
+
+    @GetMapping("/{email}") //GET
+    public Student findByEmail(@PathVariable("email") String email){
+        return service.findByEmail(email);
+    }
+
+    @PutMapping //UPDATE
+    public Student updateStudent(@RequestBody Student student){
+        return service.update(student);
+    }
+
+    @DeleteMapping("/{email}") //DELETE
+    public void delete(@PathVariable("email") String email){
+        service.delete(email);
+
+    }
+    @GetMapping() //GET ALL
     public List<Student> findAllStudents(){
         return service.findAllStudents();
     }

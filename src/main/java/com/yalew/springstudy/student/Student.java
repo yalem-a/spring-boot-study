@@ -7,18 +7,18 @@ public class Student {
     private String lastname;
     private LocalDate dateOfBirth;
     private String email;
-    private int dob;
+    private int age;
 
     public Student(String firstname,
                    String lastname,
                    LocalDate dateOfBirth,
                    String email,
-                   int dob) {
+                   int age) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
-        this.dob = dob;
+        this.age = age;
     }
 
     public Student() {
@@ -56,11 +56,11 @@ public class Student {
         this.email = email;
     }
 
-    public int getDob() {
-        return dob;
+    public int getAge() {
+        return age;
     }
 
-    public void setDob(int dob) {
-        this.dob = dob;
+    public void setAge(int age) {
+        this.age = age;
     }
 }
